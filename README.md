@@ -19,3 +19,9 @@ snap install classic --edge --devmode
 sudo classic
 #then can do: 
 sudo apt update
+sudo apt-get install ssh ufw nano openssl curl git #NEED THIS FOR PYENV - curl  
+#go into ```nano /etc/default/ufw``` and change IPV6 to NO //
+sudo ufw allow 22
+
+###then go through your normal type of EC2 environmental installs (pyenv, python versions, postgresql, etc...
+##NOTE
