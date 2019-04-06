@@ -12,6 +12,10 @@ availble for remote SSH access </p>
 <br>
 <p> Currently the IP is 172.16.75.156 / so would be ssh hants@172.16.75.156 </p>
 
+#####IMPORT#####
+##On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing:
+##```sudo modprobe bcm2835-v4l2```
+
 #Step 1 - Install Core Developer Tools 
 #Check out this https://developer.ubuntu.com/core/get-started/developer-setup
 #Will need to run commands like: 

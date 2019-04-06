@@ -3,6 +3,12 @@ import time
 import cv2
 from kafka import KafkaProducer
 
+
+#####IMPORT#####
+##On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing:
+##```sudo modprobe bcm2835-v4l2```
+
+
 topic = "distributed-video1"
 
 def publish_video(video_file):
