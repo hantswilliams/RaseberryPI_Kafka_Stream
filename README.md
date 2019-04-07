@@ -14,6 +14,7 @@ On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing
 #https://medium.com/@kevin.michael.horan/distributed-video-streaming-with-python-and-kafka-551de69fe1dd
 #https://linuxhint.com/install-apache-kafka-ubuntu/
 #install java first 
+<p>
 #first check to see if you have Java JDK 8 - with (e.g., raseberry pi already installed)
 java -version
 #If not, then do: 
@@ -37,3 +38,4 @@ sudo bin/kafka-server-start.sh config/server.properties
 ##to test that it is working properly 
 cd /opt/Kafka/kafka_2.11-1.0.1/
 sudo bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic testing
+</p>
