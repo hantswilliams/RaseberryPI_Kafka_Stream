@@ -1,26 +1,26 @@
 Raseberrypi_Kafka_Stream
 
-####Purpose
-<p> This is a template for creating a MVP model of sending a live video
-stream from a RaseberryPi3, to a AWS EC2 instance for 'anywhere' viewing </p>
+#Purpose
+This is a template for creating a MVP model of sending a live video
+stream from a RaseberryPi3, to a AWS EC2 instance for 'anywhere' viewing 
 
 
-###Connecting to Raseberry Pi / Setup 
+##Connecting to Raseberry Pi / Setup 
 On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing:
 ```sudo modprobe bcm2835-v4l2```
 
 
-###ZOOKEEPER + KAFKA INSTALLATION 
-#https://medium.com/@kevin.michael.horan/distributed-video-streaming-with-python-and-kafka-551de69fe1dd
-#https://linuxhint.com/install-apache-kafka-ubuntu/
-#install java first 
-#first check to see if you have Java JDK 8 - with (e.g., raseberry pi already installed) <br>
+##ZOOKEEPER + KAFKA INSTALLATION 
+https://medium.com/@kevin.michael.horan/distributed-video-streaming-with-python-and-kafka-551de69fe1dd <br>
+https://linuxhint.com/install-apache-kafka-ubuntu/ <br>
+install java first <br>
+first check to see if you have Java JDK 8 - with (e.g., raseberry pi already installed) <br>
 java -version<br>
 #If not, then do: <br>
 	sudo add-apt-repository -y ppa:webupd8team/java <br>
 	sudo apt-get update <br>
 	sudo apt-get install oracle-java8-installer -y <br>
-#Now install zookeeper <br>
+Now install zookeeper <br>
 sudo apt-get install zookeeperd #install zookeeper <br>
 sudo systemctl status zookeeper #make sure its running  <br>
 sudo systemctl enable zookeeper #enable zookepper running at startup  <br>
@@ -38,4 +38,3 @@ sudo bin/kafka-server-start.sh config/server.properties <br>
 cd /opt/Kafka/kafka_2.11-1.0.1/ <br>
 #Then create a testing topic <br>
 sudo bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic testing <br>
-</p>
