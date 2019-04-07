@@ -6,36 +6,34 @@ stream from a RaseberryPi3, to a AWS EC2 instance for 'anywhere' viewing </p>
 
 
 ###Connecting to Raseberry Pi / Setup 
-<p> For now, currently testing with Ubuntu Core - termninal only. Google for instrucitons on how to download
-the OS - high level - using etcher to burn OS to SD card, then having ubuntu core account setup with public key 
-availble for remote SSH access </p>
-<br>
-<p> Currently the IP is 172.16.75.156 / so would be ssh hants@172.16.75.156 </p>
-
-#####IMPORT#####
-##On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing:
-##```sudo modprobe bcm2835-v4l2```
-
-#Step 1 - Install Core Developer Tools 
-#Check out this https://developer.ubuntu.com/core/get-started/developer-setup
-#Will need to run commands like: 
-snap install classic --edge --devmode
-sudo classic
-#then can do: 
-sudo apt update
-sudo apt-get install ssh ufw nano openssl curl git #NEED THIS FOR PYENV - curl  
-
-#for SSH access / need to work on this part further 
-http://tipsonubuntu.com/2018/05/31/enable-secure-shell-ssh-service-ubuntu-18-04/
-#go into ```nano /etc/default/ufw``` and change IPV6 to NO //
-sudo ufw allow 22
--note - might need to re-enable, recreate SSH keys / by doing ```sudo ssh-keygen -A``` , first, may need to delete the files that already exist in 
-that folder, within /etc/ssh/ (e.g., ssh_host_rsa_key, ecdsa_key, and ed25519_key)
-sudo service ssh restart
-sudo systemctl enable ssh 
-sudo systemctl status ssh 
-###then should be good to go 
+On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing:
+```sudo modprobe bcm2835-v4l2```
 
 
-###then go through your normal type of EC2 environmental installs (pyenv, python versions, postgresql, etc...
-##NOTE FOR OPENCV - need to utilize Python 3.4.5 - not 3.6 or above 
+###ZOOKEEPER + KAFKA INSTALLATION 
+#https://medium.com/@kevin.michael.horan/distributed-video-streaming-with-python-and-kafka-551de69fe1dd
+#https://linuxhint.com/install-apache-kafka-ubuntu/
+#install java first 
+#first check to see if you have Java JDK 8 - with (e.g., raseberry pi already installed)
+java -version
+#If not, then do: 
+	sudo add-apt-repository -y ppa:webupd8team/java
+	sudo apt-get update
+	sudo apt-get install oracle-java8-installer -y
+#Now install zookeeper
+sudo apt-get install zookeeperd #install zookeeper
+sudo systemctl status zookeeper #make sure its running 
+sudo systemctl enable zookeeper #enable zookepper running at startup 
+#navigate to downloads 
+cd 
+mkdir downloads 
+cd downloads 
+wget ftp://apache.cs.utah.edu/apache.org/kafka/2.2.0/kafka_2.12-2.2.0.tgz
+sudo mkdir /opt/Kafka
+sudo tar xvzf kafka_2.12-1.0.0.tgz -C /opt/Kafka  ##note, change the 1.0.0 to 2.2.0 or watever version is being utilized
+##to start up kafka manually 
+cd /opt/Kafka/kafka_2.11-1.0.1/
+sudo bin/kafka-server-start.sh config/server.properties
+##to test that it is working properly 
+cd /opt/Kafka/kafka_2.11-1.0.1/
+sudo bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic testing
