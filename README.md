@@ -10,6 +10,12 @@ On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing
 ```sudo modprobe bcm2835-v4l2```
 
 
+##For the producer/consumer to work, make sure that the producer is sending the
+##data its own machine, while have the listening - inserting in the IP address
+##of the producer machine - might need to create a static IP / public address
+##via the router for EC2 to find the address
+
+
 ##ZOOKEEPER + KAFKA INSTALLATION 
 https://medium.com/@kevin.michael.horan/distributed-video-streaming-with-python-and-kafka-551de69fe1dd <br>
 https://linuxhint.com/install-apache-kafka-ubuntu/ <br>

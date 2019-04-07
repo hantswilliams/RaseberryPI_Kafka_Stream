@@ -11,6 +11,41 @@ from kafka import KafkaProducer
 
 topic = "distributed-video1"
 
+
+
+#NOTE - this one below is to live stream what is on the web camera 
+def publish_camera():
+    """
+    Publish camera video stream to specified Kafka topic.
+    Kafka Server is expected to be running on the localhost. Not partitioned.
+    """
+
+    # Start up producer
+    producer = KafkaProducer(bootstrap_servers='localhost:9092')
+
+    
+    camera = cv2.VideoCapture(0)
+    try:
+        while(True):
+            success, frame = camera.read()
+        
+            ret, buffer = cv2.imencode('.jpg', frame)
+            producer.send(topic, buffer.tobytes())
+            
+            # Choppier stream, reduced load on processor
+            time.sleep(0.2)
+
+    except:
+        print("\nExiting.")
+        sys.exit(1)
+
+    
+    camera.release()
+
+
+
+
+#NOTE - this one below is if you want to live stream a video 
 def publish_video(video_file):
     """
     Publish given video file to a specified Kafka topic. 
@@ -45,33 +80,7 @@ def publish_video(video_file):
     print('publish complete')
 
     
-def publish_camera():
-    """
-    Publish camera video stream to specified Kafka topic.
-    Kafka Server is expected to be running on the localhost. Not partitioned.
-    """
 
-    # Start up producer
-    producer = KafkaProducer(bootstrap_servers='localhost:9092')
-
-    
-    camera = cv2.VideoCapture(0)
-    try:
-        while(True):
-            success, frame = camera.read()
-        
-            ret, buffer = cv2.imencode('.jpg', frame)
-            producer.send(topic, buffer.tobytes())
-            
-            # Choppier stream, reduced load on processor
-            time.sleep(0.2)
-
-    except:
-        print("\nExiting.")
-        sys.exit(1)
-
-    
-    camera.release()
 
 
 if __name__ == '__main__':
