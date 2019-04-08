@@ -1,0 +1,15 @@
+Raseberry_Static
+
+Home address: 72.229.16.13
+
+For RaspberryPi_1
+> 7001 = 22 
+> 7002 = 9092 
+
+
+1) Set a STATIC ip for the raseberry pi via the router or from the device itself; 
+doing it form the router is the preferred form 
+
+2) Set up port-forwarding via the router, to enable devices from external (outside network acceess)
+to get data from the device 
+

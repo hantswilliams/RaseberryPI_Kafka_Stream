@@ -7,9 +7,7 @@ topic = "distributed-video1"
 
 consumer = KafkaConsumer(
     topic, 
-    bootstrap_servers=['localhost:9092'])
-    ###NOTE - for this to work, will need to replace above local host with address of device , e.g., 'ec2-34-210-89-97.us-west-2.compute.amazonaws.com:9092' 
-    ####with the port included 
+    bootstrap_servers=['72.229.16.13:7002'])
 
 
 # Set the consumer in a Flask App
