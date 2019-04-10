@@ -2,14 +2,21 @@ Raseberry_Static
 
 Home address: 72.229.16.13
 
-For RaspberryPi_1
-> 7001 = 22 
-> 7002 = 9092 
-
 
 1) Set a STATIC ip for the raseberry pi via the router or from the device itself; 
-doing it form the router is the preferred form 
+doing it form the router is the preferred form / e.g., for my Pi, have assigned address a 
+static IP host address of 192.168.1.14 
 
 2) Set up port-forwarding via the router, to enable devices from external (outside network acceess)
-to get data from the device 
+to get data from the device / e.g., now within the device, set up specific ports that can be 
+accessed via the general IP address (72.229.16.13)
 
+For RaspberryPi_1
+> 7001 = 22  (for SSH)
+> 7002 = 9092  (for KAFKA stream)
+> 8000 = 8000   (for NGINX) - note, most routers utilize :80 for their own GUI for the router UI, 
+so pick a rand port range like 8000 or 9000 to route HTTP-like requests using NGINX 
+
+3) The firewall settings for right now with home router is set to LOW; e.g., 
+LAN->WAN = ALLOW ALL, and WAN->LAN ALLOW ALL // so HTTP, HTTPS, SSH, etc...are all turned on 
+might want to change this later 

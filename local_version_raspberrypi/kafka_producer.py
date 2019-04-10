@@ -4,7 +4,7 @@ import cv2
 from kafka import KafkaProducer
 
 
-#####IMPORT#####
+#####IMPORT#####SCRIPT WILL FAIL IF YOU DO NOT RUN THIS FIRST: 
 ##On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing:
 ##```sudo modprobe bcm2835-v4l2```
 

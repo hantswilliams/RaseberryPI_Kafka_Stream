@@ -2,6 +2,10 @@ import datetime
 from flask import Flask, Response
 from kafka import KafkaConsumer
 
+
+#NOTE - when running this, run with gunicorn kafka_consumer:app -b 127.0.0.1:8001 - or whatever 
+#address and port is assigned in your NGINX file 
+
 # Fire up the Kafka Consumer
 topic = "distributed-video1"
 

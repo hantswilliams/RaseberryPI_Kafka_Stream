@@ -2,7 +2,8 @@ Raseberrypi_Kafka_Stream
 
 #Purpose
 This is a template for creating a MVP model of sending a live video
-stream from a RaseberryPi3, to a AWS EC2 instance for 'anywhere' viewing 
+stream from a RaseberryPi3, to WWWW for 'anywhere' viewing - all local 
+off of the Pi - no ec2, no cloud - just the Pi 
 
 
 ##Connecting to Raseberry Pi / Setup 
