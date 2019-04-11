@@ -20,3 +20,12 @@ so pick a rand port range like 8000 or 9000 to route HTTP-like requests using NG
 3) The firewall settings for right now with home router is set to LOW; e.g., 
 LAN->WAN = ALLOW ALL, and WAN->LAN ALLOW ALL // so HTTP, HTTPS, SSH, etc...are all turned on 
 might want to change this later 
+
+
+
+General steps: 
+1) Start Zookeeper 
+2) Start Kafka 
+3) Enable Camera - ##```sudo modprobe bcm2835-v4l2```
+4) Enable virtual environment
+5) Start programs 
