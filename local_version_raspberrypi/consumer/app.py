@@ -44,14 +44,14 @@ def dogcam():
     if not session.get('logged_in'):
         return render_template('login.html')
     else:
-    return render_template('camera.html')
+        return render_template('camera.html')
 
 
 
 @app.route("/logout")
 def logout():
-session['logged_in'] = False
-return home()
+    session['logged_in'] = False
+    return home()
 
 
 
