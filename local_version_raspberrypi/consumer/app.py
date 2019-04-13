@@ -1,5 +1,5 @@
 import datetime
-from flask import Flask, Response
+from flask import Flask, Response, render_template, request, redirect, url_for
 from kafka import KafkaConsumer
 
 
@@ -16,6 +16,13 @@ consumer = KafkaConsumer(
 
 # Set the consumer in a Flask App
 app = Flask(__name__)
+
+
+
+@app.route('/dogcam', methods=['GET'])
+def dogcam():
+    return render_template('landing.html')
+
 
 @app.route('/video', methods=['GET'])
 def video():
