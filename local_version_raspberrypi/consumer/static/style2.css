@@ -13,11 +13,14 @@ box-sizing: border-box;
 *:focus {
 outline: none;
 }
+
 body {
 font-family: Arial;
-background-color: #3498DB;
+/* background-color: #3498DB; */
+background-color: #FFF8DC;
 padding: 50px;
 }
+
 .login {
 margin: 20px auto;
 width: 300px;
