@@ -18,8 +18,8 @@ consumer = KafkaConsumer(
 app = Flask(__name__)
 
 
-@app.route('/dogcam', methods=['GET'])
-def dogcam():
+@app.route('/dog', methods=['GET'])
+def dogcamhome():
     return render_template('dogcam.html')
 
 
