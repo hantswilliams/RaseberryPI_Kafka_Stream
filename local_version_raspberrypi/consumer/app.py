@@ -1,6 +1,7 @@
 import datetime
-from flask import Flask, Response, render_template, request, redirect, url_for
+from flask import Flask, Response, render_template, request, redirect, url_for, session, abort, flash
 from kafka import KafkaConsumer
+import os 
 
 
 #NOTE - when running this, run with gunicorn kafka_consumer:app -b 127.0.0.1:8001 - or whatever 
@@ -20,7 +21,19 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('home.html')
+    if not session.get('logged_in'):
+        return render_template('login.html')
+    else:
+        return render_template('home.html')
+
+
+@app.route('/login', methods=['POST'])
+def do_admin_login():
+    if request.form['password'] == 'password' and request.form['username'] == 'admin':
+        session['logged_in'] = True
+    else:
+        flash('wrong! hahaha')
+    return home()
 
 
 @app.route('/dogcam', methods=['GET'])
@@ -43,4 +56,5 @@ def get_video_stream():
 
 
 if __name__ == "__main__":
+    app.secret_key = os.urandom(12)
     app.run(host='0.0.0.0', debug=True)
