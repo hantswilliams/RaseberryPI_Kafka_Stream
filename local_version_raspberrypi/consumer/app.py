@@ -27,12 +27,12 @@ def home():
     if not session.get('logged_in'):
         return render_template('login.html')
     else:
-        return render_template('home.html')
+        return render_template('camera.html')
 
 
 @app.route('/login', methods=['POST'])
 def do_admin_login():
-    if request.form['password'] == 'password':
+    if request.form['password'] == '46566656':
         session['logged_in'] = True
     else:
         flash('wrong! hahaha')

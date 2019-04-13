@@ -1,169 +1,83 @@
+
+
+* {
+box-sizing: border-box;
+}
+ 
+*:focus {
+outline: none;
+}
+
 body {
-  background: #3498DB;
+font-family: Arial;
+/* background-color: #3498DB; */
+background-color: #FFF8DC;
+padding: 50px;
 }
 
-.dog {
-  width: 0px;
-  position: relative;
-  margin: 50px auto;
+.login {
+margin: 20px auto;
+width: 300px;
 }
-
-.head {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  background: #644437;
+.login-screen {
+background-color: #FFF;
+padding: 20px;
+border-radius: 5px
 }
-
-.nose {
-  position: absolute;
-  top: 50px;
-  left: -40px;
-  background: #644437;
-  width: 90px;
-  height: 50px;
-  border-radius: 0 0 0 50px;
+ 
+.app-title {
+text-align: center;
+color: #777;
 }
-
-.nose::after {
-  position: absolute;
-  background: #111;
-  width: 10px;
-  height: 10px;
-  border-radius: 5px;
-  content: "";
-  display: block;
-  top: -5px;
-  left: -5px;
+ 
+.login-form {
+text-align: center;
 }
-
-.ear {
-  background: #644437;
-  width: 40px;
-  height: 80px;
-  position: absolute;
-  top: 40px;
-  right: 20px;
-  border-radius: 0 0 0 40px;
-  border-left: 3px solid #493125;
+.control-group {
+margin-bottom: 10px;
 }
-
-.body {
-  width: 110px;
-  position: absolute;
-  top: 90px;
-  height: 120px;
-  background: #644437;
-  left: 20px;
-  border-radius: 0 150px 0 0;
-  z-index: -1;
+ 
+input {
+text-align: center;
+background-color: #ECF0F1;
+border: 2px solid transparent;
+border-radius: 3px;
+font-size: 16px;
+font-weight: 200;
+padding: 10px 0;
+width: 250px;
+transition: border .5s;
 }
-
-.body::before {
-  position: absolute;
-  display: block;
-  content: "";
-  background: #f8a643;
-  width: 50px;
-  height: 20px;
+ 
+input:focus {
+border: 2px solid #3498DB;
+box-shadow: none;
 }
-
-.body::after {
-  display: block;
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: #eee;
-  left: -8px;
-  top: 15px;
-  border-radius: 5px;
-  z-index: 3;
+ 
+.btn {
+border: 2px solid transparent;
+background: #3498DB;
+color: #ffffff;
+font-size: 16px;
+line-height: 25px;
+padding: 10px 0;
+text-decoration: none;
+text-shadow: none;
+border-radius: 3px;
+box-shadow: none;
+transition: 0.25s;
+display: block;
+width: 250px;
+margin: 0 auto;
 }
-
-.paw {
-  position: absolute;
-  width: 50px;
-  height: 25px;
-  background: #644437;
-  top: 95px;
-  left: -20px;
-  border-radius: 25px 25px 0 0;
+ 
+.btn:hover {
+background-color: #2980B9;
 }
-
-.paw::before {
-  display: block;
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 20px;
-  height: 70px;
-  width: 20px;
-  background: #493125;
-  z-index: -1;
-  border-radius: 0 20px 0 0;
-}
-
-.tail {
-  position: absolute;
-  width: 30px;
-  height: 100px;
-  background: #493125;
-  right: -20px;
-  z-index: 2;
-  border-radius: 0 50px 50px 0 / 0 100px 100px 0;
-}
-
-.bone {
-  background: #eee;
-  width: 50px;
-  height: 10px;
-  position: absolute;
-  top: 200px;
-  left: -70px;
-}
-
-.left {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: #eee;
-  border-radius: 10px;
-  top: -5px;
-  left: -5px;
-}
-
-.left::after {
-  display: block;
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: #eee;
-  border-radius: 10px;
-  top: 10px;
-  right: 0;
-}
-
-.right {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: #eee;
-  border-radius: 10px;
-  top: -5px;
-  right: -5px;
-}
-
-.right::after {
-  display: block;
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: #eee;
-  border-radius: 10px;
-  top: 10px;
-  right: 0;
+ 
+.login-link {
+font-size: 12px;
+color: #444;
+display: block;
+margin-top: 12px;
 }

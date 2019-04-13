@@ -1,9 +1,19 @@
 <html>
   <head>
-    <title>The PEARL Dogcam Show</title>
+    <title>The Dogcam</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
   </head>
   <body>
-    <h1>Staring Pearl</h1>
-    <img src="{{ url_for('video') }}">
+
+	<div class="text-center">
+      <img src="{{ url_for('static', filename='dog.png') }}" align="middle">
+    </div>
+
+	<div class="text-center">
+    	<h1>Princess Finder</h1>
+    	<img src="{{ url_for('video') }}" align="middle">
+    </div>
+
   </body>
 </html>

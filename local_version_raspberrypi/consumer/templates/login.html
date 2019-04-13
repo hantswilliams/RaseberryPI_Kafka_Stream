@@ -1,6 +1,6 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-<link rel="stylesheet" href="/static/style2.css" type="text/css">
+<link rel="stylesheet" href="/static/style.css" type="text/css">
 
 {% block body %}
 {% if session['logged_in'] %}
@@ -11,7 +11,7 @@ You're logged in already!
  
 
 <div class="text-center">
-	<img src="{{ url_for('static', filename='dog2.png') }}" align="middle">
+	<img src="{{ url_for('static', filename='dog.png') }}" align="middle">
 </div>
 
  <div class="container">
