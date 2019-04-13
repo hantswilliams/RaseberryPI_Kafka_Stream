@@ -19,6 +19,9 @@ consumer = KafkaConsumer(
 app = Flask(__name__)
 
 
+
+
+
 @app.route('/', methods=['GET'])
 def home():
     if not session.get('logged_in'):
@@ -40,6 +43,11 @@ def do_admin_login():
 def dogcam():
     return render_template('camera.html')
 
+
+
+
+
+###THIS PART BELOW IS FOR THE ACTUAL CV STREAM/ INGESTION 
 
 @app.route('/video', methods=['GET'])
 def video():
