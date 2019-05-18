@@ -1,12 +1,12 @@
-Raseberrypi_Kafka_Stream
+# Raseberrypi_Kafka_Stream
 
-#Purpose
+## Purpose
 This is a template for creating a MVP model of sending a live video
 stream from a RaseberryPi3, to WWWW for 'anywhere' viewing - all local 
 off of the Pi - no ec2, no cloud - just the Pi 
 
 
-##Connecting to Raseberry Pi / Setup 
+## Connecting to Raseberry Pi / Setup 
 On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing:
 ```sudo modprobe bcm2835-v4l2```
 In addition, to start the proper python binders (if using Adrian OS image) by sure to perform
