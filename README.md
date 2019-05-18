@@ -2,17 +2,17 @@
 
 ## Purpose
 This is a template for creating a MVP model of sending a live video
-stream from a RaseberryPi3, to WWWW for 'anywhere' viewing - all local 
+stream from a RaseberryPi3, to WWW for 'anywhere' viewing - all local 
 off of the Pi - no ec2, no cloud - just the Pi 
 
 
 ## Connecting to Raseberry Pi / Setup 
-On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing:
+On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing: <br>
 ```sudo modprobe bcm2835-v4l2```
-In addition, to start the proper python binders (if using Adrian OS image) by sure to perform
+In addition, to start the proper python binders (if using Adrian OS image) by sure to perform <br>
 ```source start_py3cv3.sh```
-Once ready to begin, get the producer.py setup and running (ensuring zookeeper and kafka are running first)
-Then perform the below command to get consumer working: 
+Once ready to begin, get the producer.py setup and running (ensuring zookeeper and kafka are running first) <br>
+Then perform the below command to get consumer working:  <br>
 ```gunicorn app:app -b 127.0.0.1:8001```
 Refer to the nginx file if changes need to get made, but otherwise you are then good to go! 
 
@@ -22,13 +22,11 @@ Refer to the nginx file if changes need to get made, but otherwise you are then 
 
 
 
-##For the producer/consumer to work, make sure that the producer is sending the
-##data its own machine, while have the listening - inserting in the IP address
-##of the producer machine - might need to create a static IP / public address
-##via the router for EC2 to find the address
+## For the producer/consumer to work:
+make sure that the producer is sending the data its own machine, while have the listening - inserting in the IP address of the producer machine - might need to create a static IP / public address via the router for EC2 to find the address
 
 
-##ZOOKEEPER + KAFKA INSTALLATION 
+## ZOOKEEPER + KAFKA INSTALLATION 
 ```
 https://medium.com/@kevin.michael.horan/distributed-video-streaming-with-python-and-kafka-551de69fe1dd <br>
 https://linuxhint.com/install-apache-kafka-ubuntu/ <br>
