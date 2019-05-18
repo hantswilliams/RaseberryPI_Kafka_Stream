@@ -29,6 +29,7 @@ Refer to the nginx file if changes need to get made, but otherwise you are then 
 
 
 ##ZOOKEEPER + KAFKA INSTALLATION 
+```
 https://medium.com/@kevin.michael.horan/distributed-video-streaming-with-python-and-kafka-551de69fe1dd <br>
 https://linuxhint.com/install-apache-kafka-ubuntu/ <br>
 install java first <br>
@@ -56,3 +57,4 @@ sudo bin/kafka-server-start.sh config/server.properties <br>
 cd /opt/Kafka/kafka_2.11-1.0.1/ <br>
 #Then create a testing topic <br>
 sudo bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1  --partitions 1 --topic testing <br>
+```
