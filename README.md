@@ -9,6 +9,17 @@ off of the Pi - no ec2, no cloud - just the Pi
 ##Connecting to Raseberry Pi / Setup 
 On the raseberrypi, be sure to enable the cv2.VideoCapture ability by performing:
 ```sudo modprobe bcm2835-v4l2```
+In addition, to start the proper python binders (if using Adrian OS image) by sure to perform
+```source start_py3cv3.sh```
+Once ready to begin, get the producer.py setup and running (ensuring zookeeper and kafka are running first)
+Then perform the below command to get consumer working: 
+```gunicorn app:app -b 127.0.0.1:8001```
+Refer to the nginx file if changes need to get made, but otherwise you are then good to go! 
+
+
+
+
+
 
 
 ##For the producer/consumer to work, make sure that the producer is sending the
